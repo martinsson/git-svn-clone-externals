@@ -19,7 +19,7 @@ function do_clone()
 set -x
 	test -d .git_externals || return 1
 	module=`echo $remote_url` #dont know how to handle when branches and tags are in the middle of the svn url, so just copying the trunk
-	branch=`echo $remote_url|sed 's,\(.*\)\(/trunk\|/branch.*\|/tag.*\),\2,'|sed 's,^/,,'`
+	branch=""
 	if [[ $branch = $remote_url ]]; then
 		branch=""
 	fi
